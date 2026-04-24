@@ -36,8 +36,10 @@ export default function RootLayout({
     "url": "https://africentric.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Victoria Island",
-      "addressLocality": "Lagos",
+      "streetAddress": "No. 40 Aswan Street, Wuse Zone 3",
+      "addressLocality": "Abuja",
+      "addressRegion": "FCT",
+      "postalCode": "900281",
       "addressCountry": "NG"
     },
     "serviceType": ["Strategic Consulting", "Financial Advisory", "Market Entry"],

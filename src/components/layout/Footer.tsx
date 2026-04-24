@@ -14,6 +14,11 @@ const Footer = () => {
             Africentric
           </Link>
           <p className="text-slate-500 text-sm leading-relaxed">
+            No. 40 Aswan Street, Wuse Zone 3, <br />
+            Abuja, Nigeria <br />
+            +234 800 AFRI PRO
+          </p>
+          <p className="text-slate-500 text-sm leading-relaxed pt-4">
             © 2024 Africentric Professional Services. <br />
             All rights reserved.
           </p>

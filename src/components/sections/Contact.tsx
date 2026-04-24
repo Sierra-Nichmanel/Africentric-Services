@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Our Office</h4>
-                  <p className="text-slate-500">Victoria Island, Lagos, Nigeria</p>
+                  <p className="text-slate-500">No. 40 Aswan Street, Wuse Zone 3, Abuja, Nigeria</p>
                 </div>
               </div>
             </div>
