@@ -18,6 +18,16 @@ export default function ContactPage() {
     message: "",
   });
 
+  const openCalendly = () => {
+    if (typeof window !== "undefined" && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/morgum17/schedule-a-consultation'
+      });
+    } else {
+      window.open('https://calendly.com/morgum17/schedule-a-consultation', '_blank');
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
@@ -159,15 +169,13 @@ export default function ContactPage() {
               <p className="text-slate-600 text-sm">
                 Skip the form and schedule a 15-minute introductory briefing directly with a senior partner.
               </p>
-              <a 
-                href="https://calendly.com/africentric/15min" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={openCalendly}
                 className="w-full bg-[#775a19] text-white py-4 rounded font-bold hover:bg-[#5d4613] transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#775a19]/20"
               >
                 <Calendar size={20} />
                 Schedule a Briefing
-              </a>
+              </button>
             </motion.div>
           </div>
 

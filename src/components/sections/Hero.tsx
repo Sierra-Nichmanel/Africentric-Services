@@ -5,6 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Hero = () => {
+  const openCalendly = () => {
+    if (typeof window !== "undefined" && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/morgum17/schedule-a-consultation'
+      });
+    } else {
+      window.open('https://calendly.com/morgum17/schedule-a-consultation', '_blank');
+    }
+  };
+
   return (
     <section className="relative bg-[#fbf9f8] pt-32 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
@@ -31,14 +41,12 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4"
           >
-            <a
-              href="https://calendly.com/africentric/15min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#002349] text-white px-8 py-4 rounded font-bold hover:shadow-lg transition-all"
+            <button
+              onClick={openCalendly}
+              className="bg-[#002349] text-white px-8 py-4 rounded font-bold hover:shadow-lg transition-all active:scale-95"
             >
               Book a Consultation
-            </a>
+            </button>
             <Link
               href="/services"
               className="border-2 border-[#002349] text-[#002349] px-8 py-4 rounded font-bold hover:bg-slate-100 transition-all"
