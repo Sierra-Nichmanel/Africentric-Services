@@ -31,12 +31,14 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4"
           >
-            <Link
-              href="/contact"
+            <a
+              href="https://calendly.com/africentric/15min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#002349] text-white px-8 py-4 rounded font-bold hover:shadow-lg transition-all"
             >
               Book a Consultation
-            </Link>
+            </a>
             <Link
               href="/services"
               className="border-2 border-[#002349] text-[#002349] px-8 py-4 rounded font-bold hover:bg-slate-100 transition-all"

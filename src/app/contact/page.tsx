@@ -159,12 +159,15 @@ export default function ContactPage() {
               <p className="text-slate-600 text-sm">
                 Skip the form and schedule a 15-minute introductory briefing directly with a senior partner.
               </p>
-              <button 
+              <a 
+                href="https://calendly.com/africentric/15min" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-[#775a19] text-white py-4 rounded font-bold hover:bg-[#5d4613] transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#775a19]/20"
               >
                 <Calendar size={20} />
                 Schedule a Briefing
-              </button>
+              </a>
             </motion.div>
           </div>
 
