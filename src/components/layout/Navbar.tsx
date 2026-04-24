@@ -17,6 +17,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const openCalendly = () => {
+    if (typeof window !== "undefined" && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({
+        url: 'https://calendly.com/morgum17/schedule-a-consultation'
+      });
+    } else {
+      window.open('https://calendly.com/morgum17/schedule-a-consultation', '_blank');
+    }
+  };
+
   const navLinks = [
     { name: "Services", href: "/services" },
     { name: "Insights", href: "/insights" },
@@ -55,12 +65,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="hidden md:block bg-[#002349] text-white px-6 py-3 rounded text-sm font-semibold hover:bg-[#003366] transition-all transform hover:scale-105"
+        <button
+          onClick={openCalendly}
+          className="hidden md:block bg-[#002349] text-white px-6 py-3 rounded text-sm font-semibold hover:bg-[#003366] transition-all transform hover:scale-105 active:scale-95"
         >
           Book a Consultation
-        </Link>
+        </button>
 
         {/* Mobile Toggle */}
         <button
@@ -90,13 +100,15 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="bg-[#002349] text-white px-6 py-4 rounded text-center font-bold mt-2"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openCalendly();
+              }}
+              className="bg-[#002349] text-white px-6 py-4 rounded text-center font-bold mt-2 active:scale-95 transition-all"
             >
               Book a Consultation
-            </Link>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
