@@ -3,6 +3,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/sections/About";
+import AboutStats from "@/components/sections/AboutStats";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -50,6 +51,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <AboutStats />
       <AboutSection />
 
       <Footer />
